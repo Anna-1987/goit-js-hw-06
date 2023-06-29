@@ -1,21 +1,32 @@
-const inputElVal = document.querySelector('#validation-input');
-const totalLenght = inputElVal.getAttribute("data-length");
-let intTotallenght = parseInt(totalLenght, 10);
+ const inputTextEl = document.querySelector('#validation-input');
+// console.log(inputElVal.value.length);
+const totalLenght = inputTextEl.getAttribute("data-length");
 
-inputElVal.addEventListener('focus', onInput );
-inputElVal.addEventListener('blure', onInput );
+ inputTextEl.addEventListener('blur', outInput );
 
 
- function onInput() {
-  if (inputElVal.value.length === intTotallenght) {
-    inputElVal.classList.remove("invalid");
-    inputElVal.classList.add("valid");
-  }
-  if (inputElVal.value.length === 0) {
-    inputElVal.classList.remove("valid");
-    inputElVal.classList.remove("invalid");
-  }
-  if (inputElVal.value.length !== intTotallenght && inputElVal.value.length !== 0) {
-    inputElVal.classList.add("invalid");
-  }
-};
+ function outInput(event) {
+    if (event.target.value.length == totalLenght) {
+		inputTextEl.classList.add('valid')
+		if (inputTextEl.classList.contains('invalid')) {
+			inputTextEl.classList.remove('invalid')
+		}
+	} else {
+		if (inputTextEl.classList.contains('valid')) {
+			inputTextEl.classList.remove('valid')
+		}
+		inputTextEl.classList.add('invalid')
+	}
+}
+//   if (event.target.value.length === totalLenght) {
+//     inputElVal.classList.remove("invalid");
+//     inputElVal.classList.add("valid");
+//   }
+//   if (event.target.value.length === 0) {
+//     inputElVal.classList.remove("valid");
+//     inputElVal.classList.add("invalid");
+//   }
+//   if (event.target.value.length !== totalLenght && event.target.value.length !== 0) {
+//     inputElVal.classList.add("invalid");
+//   }
+// };
