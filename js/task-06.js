@@ -18,15 +18,4 @@ const totalLenght = inputTextEl.getAttribute("data-length");
 		inputTextEl.classList.add('invalid')
 	}
 }
-//   if (event.target.value.length === totalLenght) {
-//     inputElVal.classList.remove("invalid");
-//     inputElVal.classList.add("valid");
-//   }
-//   if (event.target.value.length === 0) {
-//     inputElVal.classList.remove("valid");
-//     inputElVal.classList.add("invalid");
-//   }
-//   if (event.target.value.length !== totalLenght && event.target.value.length !== 0) {
-//     inputElVal.classList.add("invalid");
-//   }
-// };
+
