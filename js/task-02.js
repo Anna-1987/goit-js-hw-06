@@ -8,11 +8,14 @@ const ingredients = [
 ];
 
 let ulList = document.getElementById("ingredients");
+const newLiArray = [];
 
 const foodIngredients = ingredients.forEach(ingredient => {
   let items = document.createElement("li");
   items.innerHTML = ingredient;
-  ulList.append(items);
+  newArray.append(items);
 });
+
+ulList.append(...newLiArray)
 
 
